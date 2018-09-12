@@ -20,7 +20,7 @@
   "paths": {
     "/gifs/search": {
       "get": {
-        "operationId": "GET_gifs-search",
+        "operationId": "search_gifs",
         "summary": "Search",
         "tags": [
           "Gifs"
@@ -113,369 +113,10 @@
                         "type": "string"
                       },
                       "images": {
-                        "type": "object",
-                        "properties": {
-                          "fixed_height": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_downsampled": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_downsampled": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_small": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_small_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_small": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_small_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_large": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_medium": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "original": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "frames": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "original_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "looping": {
-                            "type": "object",
-                            "properties": {
-                              "mp4": {
-                                "type": "string"
-                              }
-                            }
-                          }
-                        }
+                        "$ref": "#/definitions/images"
                       },
                       "user": {
-                        "type": "object",
-                        "properties": {
-                          "avatar_url": {
-                            "type": "string"
-                          },
-                          "banner_url": {
-                            "type": "string"
-                          },
-                          "profile_url": {
-                            "type": "string"
-                          },
-                          "username": {
-                            "type": "string"
-                          },
-                          "display_name": {
-                            "type": "string"
-                          },
-                          "twitter": {
-                            "type": "string"
-                          }
-                        }
+                        "$ref": "#/definitions/user"
                       }
                     }
                   }
@@ -553,396 +194,7 @@
                 "data": {
                   "type": "array",
                   "items": {
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "type": "string"
-                      },
-                      "id": {
-                        "type": "string"
-                      },
-                      "slug": {
-                        "type": "string"
-                      },
-                      "url": {
-                        "type": "string"
-                      },
-                      "bitly_gif_url": {
-                        "type": "string"
-                      },
-                      "bitly_url": {
-                        "type": "string"
-                      },
-                      "embed_url": {
-                        "type": "string"
-                      },
-                      "username": {
-                        "type": "string"
-                      },
-                      "source": {
-                        "type": "string"
-                      },
-                      "rating": {
-                        "type": "string"
-                      },
-                      "content_url": {
-                        "type": "string"
-                      },
-                      "source_tld": {
-                        "type": "string"
-                      },
-                      "source_post_url": {
-                        "type": "string"
-                      },
-                      "import_datetime": {
-                        "type": "string"
-                      },
-                      "trending_datetime": {
-                        "type": "string"
-                      },
-                      "images": {
-                        "type": "object",
-                        "properties": {
-                          "fixed_height": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_downsampled": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_downsampled": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_small": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_small_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_small": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_small_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_large": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_medium": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "original": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "frames": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "original_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "looping": {
-                            "type": "object",
-                            "properties": {
-                              "mp4": {
-                                "type": "string"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
+                    "$ref": "#/definitions/response_items"
                   }
                 },
                 "meta": {
@@ -1016,396 +268,7 @@
                 "data": {
                   "type": "array",
                   "items": {
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "type": "string"
-                      },
-                      "id": {
-                        "type": "string"
-                      },
-                      "slug": {
-                        "type": "string"
-                      },
-                      "url": {
-                        "type": "string"
-                      },
-                      "bitly_gif_url": {
-                        "type": "string"
-                      },
-                      "bitly_url": {
-                        "type": "string"
-                      },
-                      "embed_url": {
-                        "type": "string"
-                      },
-                      "username": {
-                        "type": "string"
-                      },
-                      "source": {
-                        "type": "string"
-                      },
-                      "rating": {
-                        "type": "string"
-                      },
-                      "content_url": {
-                        "type": "string"
-                      },
-                      "source_tld": {
-                        "type": "string"
-                      },
-                      "source_post_url": {
-                        "type": "string"
-                      },
-                      "import_datetime": {
-                        "type": "string"
-                      },
-                      "trending_datetime": {
-                        "type": "string"
-                      },
-                      "images": {
-                        "type": "object",
-                        "properties": {
-                          "fixed_height": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_downsampled": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_downsampled": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_small": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_small_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_small": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_small_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_large": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_medium": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "original": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "frames": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "original_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "looping": {
-                            "type": "object",
-                            "properties": {
-                              "mp4": {
-                                "type": "string"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
+                    "$ref": "#/definitions/response_items"
                   }
                 },
                 "meta": {
@@ -1477,396 +340,7 @@
               "type": "object",
               "properties": {
                 "data": {
-                  "type": "object",
-                  "properties": {
-                    "type": {
-                      "type": "string"
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "slug": {
-                      "type": "string"
-                    },
-                    "url": {
-                      "type": "string"
-                    },
-                    "bitly_gif_url": {
-                      "type": "string"
-                    },
-                    "bitly_url": {
-                      "type": "string"
-                    },
-                    "embed_url": {
-                      "type": "string"
-                    },
-                    "username": {
-                      "type": "string"
-                    },
-                    "source": {
-                      "type": "string"
-                    },
-                    "rating": {
-                      "type": "string"
-                    },
-                    "content_url": {
-                      "type": "string"
-                    },
-                    "source_tld": {
-                      "type": "string"
-                    },
-                    "source_post_url": {
-                      "type": "string"
-                    },
-                    "import_datetime": {
-                      "type": "string"
-                    },
-                    "trending_datetime": {
-                      "type": "string"
-                    },
-                    "images": {
-                      "type": "object",
-                      "properties": {
-                        "fixed_height": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            },
-                            "mp4": {
-                              "type": "string"
-                            },
-                            "mp4_size": {
-                              "type": "string"
-                            },
-                            "webp": {
-                              "type": "string"
-                            },
-                            "webp_size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_height_still": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_height_downsampled": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            },
-                            "webp": {
-                              "type": "string"
-                            },
-                            "webp_size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_width": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            },
-                            "mp4": {
-                              "type": "string"
-                            },
-                            "mp4_size": {
-                              "type": "string"
-                            },
-                            "webp": {
-                              "type": "string"
-                            },
-                            "webp_size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_width_still": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_width_downsampled": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            },
-                            "webp": {
-                              "type": "string"
-                            },
-                            "webp_size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_height_small": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            },
-                            "mp4": {
-                              "type": "string"
-                            },
-                            "mp4_size": {
-                              "type": "string"
-                            },
-                            "webp": {
-                              "type": "string"
-                            },
-                            "webp_size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_height_small_still": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_width_small": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            },
-                            "mp4": {
-                              "type": "string"
-                            },
-                            "mp4_size": {
-                              "type": "string"
-                            },
-                            "webp": {
-                              "type": "string"
-                            },
-                            "webp_size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_width_small_still": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "downsized": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "downsized_still": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "downsized_large": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "downsized_medium": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "original": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            },
-                            "frames": {
-                              "type": "string"
-                            },
-                            "mp4": {
-                              "type": "string"
-                            },
-                            "mp4_size": {
-                              "type": "string"
-                            },
-                            "webp": {
-                              "type": "string"
-                            },
-                            "webp_size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "original_still": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "looping": {
-                          "type": "object",
-                          "properties": {
-                            "mp4": {
-                              "type": "string"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/definitions/response_items"
                 },
                 "meta": {
                   "type": "object",
@@ -2095,27 +569,7 @@
                         "type": "string"
                       },
                       "user": {
-                        "type": "object",
-                        "properties": {
-                          "avatar_url": {
-                            "type": "string"
-                          },
-                          "banner_url": {
-                            "type": "string"
-                          },
-                          "profile_url": {
-                            "type": "string"
-                          },
-                          "username": {
-                            "type": "string"
-                          },
-                          "display_name": {
-                            "type": "string"
-                          },
-                          "twitter": {
-                            "type": "string"
-                          }
-                        }
+                        "$ref": "#/definitions/user"
                       },
                       "source_tld": {
                         "type": "string"
@@ -2130,346 +584,7 @@
                         "type": "string"
                       },
                       "images": {
-                        "type": "object",
-                        "properties": {
-                          "fixed_height": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_downsampled": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_downsampled": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_small": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_small_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_small": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_small_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_large": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_medium": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "original": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "frames": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "original_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "looping": {
-                            "type": "object",
-                            "properties": {
-                              "mp4": {
-                                "type": "string"
-                              }
-                            }
-                          }
-                        }
+                        "$ref": "#/definitions/images"
                       }
                     }
                   }
@@ -2542,396 +657,7 @@
                 "data": {
                   "type": "array",
                   "items": {
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "type": "string"
-                      },
-                      "id": {
-                        "type": "string"
-                      },
-                      "slug": {
-                        "type": "string"
-                      },
-                      "url": {
-                        "type": "string"
-                      },
-                      "bitly_gif_url": {
-                        "type": "string"
-                      },
-                      "bitly_url": {
-                        "type": "string"
-                      },
-                      "embed_url": {
-                        "type": "string"
-                      },
-                      "username": {
-                        "type": "string"
-                      },
-                      "source": {
-                        "type": "string"
-                      },
-                      "rating": {
-                        "type": "string"
-                      },
-                      "content_url": {
-                        "type": "string"
-                      },
-                      "source_tld": {
-                        "type": "string"
-                      },
-                      "source_post_url": {
-                        "type": "string"
-                      },
-                      "import_datetime": {
-                        "type": "string"
-                      },
-                      "trending_datetime": {
-                        "type": "string"
-                      },
-                      "images": {
-                        "type": "object",
-                        "properties": {
-                          "fixed_height": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_downsampled": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_downsampled": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_small": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_small_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_small": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_small_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_large": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_medium": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "original": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "frames": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "original_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "looping": {
-                            "type": "object",
-                            "properties": {
-                              "mp4": {
-                                "type": "string"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
+                    "$ref": "#/definitions/response_items"
                   }
                 },
                 "meta": {
@@ -3133,396 +859,7 @@
                 "data": {
                   "type": "array",
                   "items": {
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "type": "string"
-                      },
-                      "id": {
-                        "type": "string"
-                      },
-                      "slug": {
-                        "type": "string"
-                      },
-                      "url": {
-                        "type": "string"
-                      },
-                      "bitly_gif_url": {
-                        "type": "string"
-                      },
-                      "bitly_url": {
-                        "type": "string"
-                      },
-                      "embed_url": {
-                        "type": "string"
-                      },
-                      "username": {
-                        "type": "string"
-                      },
-                      "source": {
-                        "type": "string"
-                      },
-                      "rating": {
-                        "type": "string"
-                      },
-                      "content_url": {
-                        "type": "string"
-                      },
-                      "source_tld": {
-                        "type": "string"
-                      },
-                      "source_post_url": {
-                        "type": "string"
-                      },
-                      "import_datetime": {
-                        "type": "string"
-                      },
-                      "trending_datetime": {
-                        "type": "string"
-                      },
-                      "images": {
-                        "type": "object",
-                        "properties": {
-                          "fixed_height": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_downsampled": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_downsampled": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_small": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_height_small_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_small": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "fixed_width_small_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_large": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "downsized_medium": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "original": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "string"
-                              },
-                              "frames": {
-                                "type": "string"
-                              },
-                              "mp4": {
-                                "type": "string"
-                              },
-                              "mp4_size": {
-                                "type": "string"
-                              },
-                              "webp": {
-                                "type": "string"
-                              },
-                              "webp_size": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "original_still": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "string"
-                              },
-                              "height": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "looping": {
-                            "type": "object",
-                            "properties": {
-                              "mp4": {
-                                "type": "string"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
+                    "$ref": "#/definitions/response_items"
                   }
                 },
                 "meta": {
@@ -3591,396 +928,7 @@
               "type": "object",
               "properties": {
                 "data": {
-                  "type": "object",
-                  "properties": {
-                    "type": {
-                      "type": "string"
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "slug": {
-                      "type": "string"
-                    },
-                    "url": {
-                      "type": "string"
-                    },
-                    "bitly_gif_url": {
-                      "type": "string"
-                    },
-                    "bitly_url": {
-                      "type": "string"
-                    },
-                    "embed_url": {
-                      "type": "string"
-                    },
-                    "username": {
-                      "type": "string"
-                    },
-                    "source": {
-                      "type": "string"
-                    },
-                    "rating": {
-                      "type": "string"
-                    },
-                    "content_url": {
-                      "type": "string"
-                    },
-                    "source_tld": {
-                      "type": "string"
-                    },
-                    "source_post_url": {
-                      "type": "string"
-                    },
-                    "import_datetime": {
-                      "type": "string"
-                    },
-                    "trending_datetime": {
-                      "type": "string"
-                    },
-                    "images": {
-                      "type": "object",
-                      "properties": {
-                        "fixed_height": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            },
-                            "mp4": {
-                              "type": "string"
-                            },
-                            "mp4_size": {
-                              "type": "string"
-                            },
-                            "webp": {
-                              "type": "string"
-                            },
-                            "webp_size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_height_still": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_height_downsampled": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            },
-                            "webp": {
-                              "type": "string"
-                            },
-                            "webp_size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_width": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            },
-                            "mp4": {
-                              "type": "string"
-                            },
-                            "mp4_size": {
-                              "type": "string"
-                            },
-                            "webp": {
-                              "type": "string"
-                            },
-                            "webp_size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_width_still": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_width_downsampled": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            },
-                            "webp": {
-                              "type": "string"
-                            },
-                            "webp_size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_height_small": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            },
-                            "mp4": {
-                              "type": "string"
-                            },
-                            "mp4_size": {
-                              "type": "string"
-                            },
-                            "webp": {
-                              "type": "string"
-                            },
-                            "webp_size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_height_small_still": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_width_small": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            },
-                            "mp4": {
-                              "type": "string"
-                            },
-                            "mp4_size": {
-                              "type": "string"
-                            },
-                            "webp": {
-                              "type": "string"
-                            },
-                            "webp_size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "fixed_width_small_still": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "downsized": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "downsized_still": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "downsized_large": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "downsized_medium": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "original": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            },
-                            "size": {
-                              "type": "string"
-                            },
-                            "frames": {
-                              "type": "string"
-                            },
-                            "mp4": {
-                              "type": "string"
-                            },
-                            "mp4_size": {
-                              "type": "string"
-                            },
-                            "webp": {
-                              "type": "string"
-                            },
-                            "webp_size": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "original_still": {
-                          "type": "object",
-                          "properties": {
-                            "url": {
-                              "type": "string"
-                            },
-                            "width": {
-                              "type": "string"
-                            },
-                            "height": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "looping": {
-                          "type": "object",
-                          "properties": {
-                            "mp4": {
-                              "type": "string"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/definitions/response_items"
                 },
                 "meta": {
                   "type": "object",
@@ -4028,6 +976,258 @@
     }
   },
   "definitions": {
+    "response_items": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "bitly_gif_url": {
+          "type": "string"
+        },
+        "bitly_url": {
+          "type": "string"
+        },
+        "embed_url": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "string"
+        },
+        "content_url": {
+          "type": "string"
+        },
+        "source_tld": {
+          "type": "string"
+        },
+        "source_post_url": {
+          "type": "string"
+        },
+        "import_datetime": {
+          "type": "string"
+        },
+        "trending_datetime": {
+          "type": "string"
+        },
+        "images": {
+          "$ref": "#/definitions/images"
+        }
+      }
+    },
+    "images": {
+      "type": "object",
+      "properties": {
+        "fixed_height": {
+          "$ref": "#/definitions/image_properties"
+        },
+        "fixed_height_still": {
+          "$ref": "#/definitions/still_properties"
+        },
+        "fixed_height_downsampled": {
+          "$ref": "#/definitions/downsampled"
+        },
+        "fixed_width": {
+          "$ref": "#/definitions/image_properties"
+        },
+        "fixed_width_still": {
+          "$ref": "#/definitions/still_properties"
+        },
+        "fixed_width_downsampled": {
+          "$ref": "#/definitions/downsampled"
+        },
+        "fixed_height_small": {
+          "$ref": "#/definitions/image_properties"
+        },
+        "fixed_height_small_still": {
+          "$ref": "#/definitions/still_properties"
+        },
+        "fixed_width_small": {
+          "$ref": "#/definitions/image_properties"
+        },
+        "fixed_width_small_still": {
+          "$ref": "#/definitions/still_properties"
+        },
+        "downsized": {
+          "$ref": "#/definitions/downsized"
+        },
+        "downsized_still": {
+          "$ref": "#/definitions/still_properties"
+        },
+        "downsized_large": {
+          "$ref": "#/definitions/downsized"
+        },
+        "downsized_medium": {
+          "$ref": "#/definitions/downsized"
+        },
+        "original": {
+          "$ref": "#/definitions/image_properties"
+        },
+        "original_still": {
+          "$ref": "#/definitions/still_properties"
+        },
+        "looping": {
+          "$ref": "#/definitions/looping"
+        }
+      }
+    },
+    "image_properties": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "type": "string"
+        },
+        "height": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string"
+        },
+        "mp4": {
+          "type": "string"
+        },
+        "mp4_size": {
+          "type": "string"
+        },
+        "webp": {
+          "type": "string"
+        },
+        "webp_size": {
+          "type": "string"
+        }
+      }
+    },
+    "still_properties": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "type": "string"
+        },
+        "height": {
+          "type": "string"
+        }
+      }
+    },
+    "downsampled": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "type": "string"
+        },
+        "height": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string"
+        },
+        "webp": {
+          "type": "string"
+        },
+        "webp_size": {
+          "type": "string"
+        }
+      }
+    },
+    "fixed_width_small": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "type": "string"
+        },
+        "height": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string"
+        },
+        "mp4": {
+          "type": "string"
+        },
+        "mp4_size": {
+          "type": "string"
+        },
+        "webp": {
+          "type": "string"
+        },
+        "webp_size": {
+          "type": "string"
+        }
+      }
+    },
+    "downsized": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "type": "string"
+        },
+        "height": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string"
+        }
+      }
+    },
+    "looping": {
+      "type": "object",
+      "properties": {
+        "mp4": {
+          "type": "string"
+        }
+      }
+    },
+    "user": {
+      "type": "object",
+      "properties": {
+        "avatar_url": {
+          "type": "string"
+        },
+        "banner_url": {
+          "type": "string"
+        },
+        "profile_url": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "twitter": {
+          "type": "string"
+        }
+      }
+    },
     "shared-user": {
       "title": "Shared User",
       "type": "object",
