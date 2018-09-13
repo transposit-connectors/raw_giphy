@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0",
     "title": "Giphy",
-    "description": "## Welcome\n\nThis is a place to put general notes and extra information, for internal use.\n\nTo get started designing/documenting this API, select a version on the left. # Title\nNo Description"
+    "description": ""
   },
   "host": "api.giphy.com",
   "basePath": "/v1",
@@ -25,7 +25,7 @@
         "tags": [
           "Gifs"
         ],
-        "description": "<p>Search all Giphy GIFs for a word or phrase. Punctuation will be stripped and ignored. Use a plus or url encode for phrases.</p>\n<p>Examples:</p>\n<p><a href=\"http://api.giphy.com/v1/gifs/search?q=paul+rudd&api_key=dc6zaTOxFJmzC\" target=\"_blank\">paul+rudd</a></p>\n<p><a href=\"http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=dc6zaTOxFJmzC\" target=\"_blank\">ryan+gosling</a></p>\n<p><a href=\"http://api.giphy.com/v1/gifs/search?q=american+psycho&api_key=dc6zaTOxFJmzC\" target=\"_blank\">american+psycho</a></p>\n<p><a href=\"http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC&limit=1&offset=0\" target=\"_blank\">funny+cat</a></p>",
+        "description": "Search all GIPHY GIFs for a word or phrase. Punctuation will be stripped and ignored. Use a plus or url encode for phrases. Example paul+rudd, ryan+gosling or american+psycho",
         "produces": [
           "application/json"
         ],
@@ -33,9 +33,8 @@
           {
             "name": "api_key",
             "in": "query",
-            "required": true,
-            "type": "string",
-            "default": "dc6zaTOxFJmzC"
+            "required": false,
+            "type": "string"
           },
           {
             "name": "q",
@@ -161,7 +160,7 @@
         "tags": [
           "Gifs"
         ],
-        "description": "<p>Returns meta data about a GIF, by GIF id. In the below example, the GIF ID is &quot;feqkVgjJpYtjy&quot;</p>\n<pre><code>http://api.giphy.com/v1/gifs/feqkVgjJpYtjy?api_key=dc6zaTOxFJmzC\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/gifs/feqkVgjJpYtjy?api_key=dc6zaTOxFJmzC\" target=\"_blank\">Example</a></p>",
+        "description": "Returns a GIF given that GIF's unique ID",
         "produces": [
           "application/json"
         ],
@@ -169,9 +168,8 @@
           {
             "name": "api_key",
             "in": "query",
-            "required": true,
-            "type": "string",
-            "default": "dc6zaTOxFJmzC"
+            "required": false,
+            "type": "string"
           }
         ],
         "responses": {
@@ -196,9 +194,6 @@
                       "type": "string"
                     }
                   }
-                },
-                "pagination": {
-                  "$ref": "#/definitions/pagination"
                 }
               }
             }
@@ -218,7 +213,7 @@
         "tags": [
           "Gifs"
         ],
-        "description": "<p>A multiget version of the get GIF by ID endpoint. In this case the IDs are feqkVgjJpYtjy and 7rzbxdu0ZEXLy.  Note the additional user metadata attached to the document that describes the second GIF in the response, 7rzbxdu0ZEXLy.</p>\n<pre><code>http://api.giphy.com/v1/gifs?api_key=dc6zaTOxFJmzC&amp;ids=feqkVgjJpYtjy,7rzbxdu0ZEXLy\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/gifs?api_key=dc6zaTOxFJmzC&ids=feqkVgjJpYtjy,7rzbxdu0ZEXLy\" target=\"_blank\">Example</a></p>",
+        "description": "A multiget version of the get GIF by ID endpoint.",
         "produces": [
           "application/json"
         ],
@@ -226,9 +221,8 @@
           {
             "name": "api_key",
             "in": "query",
-            "required": true,
-            "type": "string",
-            "default": "dc6zaTOxFJmzC"
+            "required": false,
+            "type": "string"
           },
           {
             "name": "ids",
@@ -282,7 +276,7 @@
         "tags": [
           "Gifs"
         ],
-        "description": "<p>The translate API draws on search, but uses the Giphy &quot;special sauce&quot; to handle translating from one vocabulary to another. In this case, words and phrases to GIFs. Example implementations of translate can be found in the Giphy <a href=\"http://giphy.com/posts/slack-adds-giphy-to-every-chatroom-wut\" target=\"_blank\">Slack</a>, <a href=\"https://marketplace.atlassian.com/plugins/com.giphy.api.hipchat\" target=\"_blank\">Hipchat</a>, <a href=\"https://wire.com/news/giphy-say-it-with-gif\" target=\"_blank\">Wire</a>, or <a href=\"https://dasher.im/\" target=\"_blank\">Dasher</a> integrations. Use a plus or url encode for phrases.</p>\n<pre><code>http://api.giphy.com/v1/gifs/translate?s=superman&amp;api_key=dc6zaTOxFJmzC\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/gifs/translate?s=superman&api_key=dc6zaTOxFJmzC\" target=\"_blank\">Example</a></p>",
+        "description": "The translate API draws on search, but uses the GIPHY special sauce to handle translating from one vocabulary to another. In this case, words and phrases to GIFs.",
         "produces": [
           "application/json"
         ],
@@ -290,9 +284,8 @@
           {
             "name": "api_key",
             "in": "query",
-            "required": true,
-            "type": "string",
-            "default": "dc6zaTOxFJmzC"
+            "required": false,
+            "type": "string"
           },
           {
             "name": "s",
@@ -340,7 +333,7 @@
         "tags": [
           "Gifs"
         ],
-        "description": "<p>Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the Giphy catalog.</p>\n<pre><code>http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&amp;tag=american+psycho\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=american+psycho\" target=\"_blank\">Example</a></p>",
+        "description": "Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.",
         "produces": [
           "application/json"
         ],
@@ -348,9 +341,8 @@
           {
             "name": "api_key",
             "in": "query",
-            "required": true,
-            "type": "string",
-            "default": "dc6zaTOxFJmzC"
+            "required": false,
+            "type": "string"
           },
           {
             "name": "tag",
@@ -392,12 +384,12 @@
     },
     "/gifs/trending": {
       "get": {
-        "operationId": "get_trending_gif",
+        "operationId": "get_trending_gifs",
         "summary": "Trending GIFs",
         "tags": [
           "Gifs"
         ],
-        "description": "<p>Fetch GIFs currently trending online. Hand curated by the Giphy editorial team. The data returned mirrors the GIFs showcased on the <a href=\"\" target=\"_blank\"></a><a target=\"_blank\" href=\"http://giphy.com\" class=\"undefined\">Giphy homepage</a>. Returns 25 results by default.</p>\n<pre><code>http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC\" target=\"_blank\">Example</a> trending GIFs query.\n<a href=\"http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&limit=5\" target=\"_blank\">Example</a> trending GIFs limited to 5 results.</p>",
+        "description": "Fetch GIFs currently trending online. Hand curated by the GIPHY editorial team. The data returned mirrors the GIFs showcased on the GIPHY homepage",
         "produces": [
           "application/json"
         ],
@@ -405,9 +397,8 @@
           {
             "name": "api_key",
             "in": "query",
-            "required": true,
-            "type": "string",
-            "default": "dc6zaTOxFJmzC"
+            "required": false,
+            "type": "string"
           },
           {
             "name": "limit",
@@ -513,7 +504,7 @@
         "tags": [
           "Sticker"
         ],
-        "description": "<p>Replicates the functionality and requirements of the classic Giphy search, but returns animated stickers rather than gifs. Example <a href=\"http://api.giphy.com/v1/stickers/search?q=cat&api_key=dc6zaTOxFJmzC\" target=\"_blank\">Cat</a></p>\n<pre><code>http://api.giphy.com/v1/stickers/search?q=cat&amp;api_key=dc6zaTOxFJmzC</code></pre>",
+        "description": "Replicates the functionality and requirements of the classic GIPHY search, but returns animated stickers rather than GIFs.",
         "produces": [
           "application/json"
         ],
@@ -521,9 +512,8 @@
           {
             "name": "api_key",
             "in": "query",
-            "required": true,
-            "type": "string",
-            "default": "dc6zaTOxFJmzC"
+            "required": false,
+            "type": "string"
           },
           {
             "name": "q",
@@ -576,7 +566,7 @@
         "tags": [
           "Sticker"
         ],
-        "description": "<p>Returns a spotaneously selected sticker from Giphy's sticker collection. Optionally limit scope of result to a specific tag. Like the GIF random endpoint, Punctuation will be stripped and ignored. Use a hyphen for phrases. Example <a href=\"http://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC&tag=oops\" target=\"_blank\">oops</a>, <a href=\"http://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC&tag=birthday\" target=\"_blank\">birthday</a> or <a href=\"http://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC&tag=whatever\" target=\"_blank\">thank-you</a>. Search terms should be URL encoded.</p>\n<pre><code>http://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC&amp;tag=oops\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC\" target=\"_blank\">Example</a> random query.</p>",
+        "description": "Returns a random Sticker, limited by tag. Excluding the tag parameter will return a random Sticker from the GIPHY catalog.",
         "produces": [
           "application/json"
         ],
@@ -584,9 +574,8 @@
           {
             "name": "api_key",
             "in": "query",
-            "required": true,
-            "type": "string",
-            "default": "dc6zaTOxFJmzC"
+            "required": false,
+            "type": "string"
           }
         ],
         "responses": {
@@ -627,7 +616,7 @@
         "tags": [
           "Sticker"
         ],
-        "description": "<p>Get the latest stickers trending on Giphy with this endpoint. Hand curated by the Giphy editorial team and refreshed daily.</p>\n<pre><code>http://api.giphy.com/v1/stickers/trending?api_key=dc6zaTOxFJmzC\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/stickers/trending?api_key=dc6zaTOxFJmzC&limit=4&fmt=html\" target=\"_blank\">Example</a> trending query with html formatted response.</p>\n<p><a href=\"http://api.giphy.com/v1/stickers/trending?api_key=dc6zaTOxFJmzC&limit=4\" target=\"_blank\">Example</a> trending query with default json response.</p>",
+        "description": "Fetch Stickers currently trending online. Hand curated by the GIPHY editorial team.",
         "produces": [
           "application/json"
         ],
@@ -635,9 +624,8 @@
           {
             "name": "api_key",
             "in": "query",
-            "required": true,
-            "type": "string",
-            "default": "dc6zaTOxFJmzC"
+            "required": false,
+            "type": "string"
           },
           {
             "name": "limit",
@@ -690,7 +678,7 @@
         "tags": [
           "Sticker"
         ],
-        "description": "<p>Using the same alogirithm as the GIF translate endpoint, the sticker translate endpoint turns words into stickers.</p>\n<pre><code>http://api.giphy.com/v1/stickers/translate?s=hungry&amp;api_key=dc6zaTOxFJmzC\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/stickers/translate?s=hungry&api_key=dc6zaTOxFJmzC\" target=\"_blank\">Example</a> translate query.</p>",
+        "description": "The translate API draws on search, but uses the GIPHY special sauce to handle translating from one vocabulary to another. In this case, words and phrases to GIFs.",
         "produces": [
           "application/json"
         ],
@@ -698,9 +686,8 @@
           {
             "name": "api_key",
             "in": "query",
-            "required": true,
-            "type": "string",
-            "default": "dc6zaTOxFJmzC"
+            "required": false,
+            "type": "string"
           },
           {
             "name": "s",

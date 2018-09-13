@@ -2,9 +2,9 @@
   "v2": {
     "swagger": {
       "auth": {
-        "type": "HEADER",
+        "type": "PARAMETER",
         "params": {
-          "header": {
+          "name": {
             "string": "api_key"
           }
         }
