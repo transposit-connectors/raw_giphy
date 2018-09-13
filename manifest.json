@@ -3,11 +3,10 @@
   "v2": {
     "swagger": {
       "auth": {
-        "type": "HEADER",
+        "type": "PARAMETER",
         "params": {
-          "header": {
-            "type": "STRING",
-            "key": "fOO_BAR"
+          "name": {
+            "string": "api_key"
           }
         }
       },
