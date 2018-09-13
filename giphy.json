@@ -194,9 +194,6 @@
                       "type": "string"
                     }
                   }
-                },
-                "pagination": {
-                  "$ref": "#/definitions/pagination"
                 }
               }
             }
