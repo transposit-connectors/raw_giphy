@@ -133,18 +133,7 @@
                   }
                 },
                 "pagination": {
-                  "type": "object",
-                  "properties": {
-                    "total_count": {
-                      "type": "integer"
-                    },
-                    "count": {
-                      "type": "integer"
-                    },
-                    "offset": {
-                      "type": "integer"
-                    }
-                  }
+                  "$ref": "#/definitions/pagination"
                 }
               }
             }
@@ -167,7 +156,7 @@
         }
       ],
       "get": {
-        "operationId": "GET_gifs-gif-id",
+        "operationId": "get_gif",
         "summary": "Get GIF by ID",
         "tags": [
           "Gifs"
@@ -209,18 +198,7 @@
                   }
                 },
                 "pagination": {
-                  "type": "object",
-                  "properties": {
-                    "total_count": {
-                      "type": "integer"
-                    },
-                    "count": {
-                      "type": "integer"
-                    },
-                    "offset": {
-                      "type": "integer"
-                    }
-                  }
+                  "$ref": "#/definitions/pagination"
                 }
               }
             }
@@ -235,7 +213,7 @@
     },
     "/gifs": {
       "get": {
-        "operationId": "GET_gifs",
+        "operationId": "get_gifs",
         "summary": "Get GIFs by ID",
         "tags": [
           "Gifs"
@@ -254,6 +232,7 @@
           },
           {
             "name": "ids",
+            "description": "comma-separated string of ids",
             "in": "query",
             "required": false,
             "type": "string"
@@ -283,18 +262,7 @@
                   }
                 },
                 "pagination": {
-                  "type": "object",
-                  "properties": {
-                    "total_count": {
-                      "type": "integer"
-                    },
-                    "count": {
-                      "type": "integer"
-                    },
-                    "offset": {
-                      "type": "integer"
-                    }
-                  }
+                  "$ref": "#/definitions/pagination"
                 }
               }
             }
@@ -309,7 +277,7 @@
     },
     "/gifs/translate": {
       "get": {
-        "operationId": "GET_gifs-translate",
+        "operationId": "get_gifs_translate",
         "summary": "Translate",
         "tags": [
           "Gifs"
@@ -328,8 +296,9 @@
           },
           {
             "name": "s",
+            "description": "Search term",
             "in": "query",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -366,7 +335,7 @@
     },
     "/gifs/random": {
       "get": {
-        "operationId": "GET_gifs-random",
+        "operationId": "get_random_gif"
         "summary": "Random",
         "tags": [
           "Gifs"
@@ -397,84 +366,7 @@
               "type": "object",
               "properties": {
                 "data": {
-                  "type": "object",
-                  "properties": {
-                    "type": {
-                      "type": "string"
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "url": {
-                      "type": "string"
-                    },
-                    "image_original_url": {
-                      "type": "string"
-                    },
-                    "image_url": {
-                      "type": "string"
-                    },
-                    "image_mp4_url": {
-                      "type": "string"
-                    },
-                    "image_frames": {
-                      "type": "string"
-                    },
-                    "image_width": {
-                      "type": "string"
-                    },
-                    "image_height": {
-                      "type": "string"
-                    },
-                    "fixed_height_downsampled_url": {
-                      "type": "string"
-                    },
-                    "fixed_height_downsampled_width": {
-                      "type": "string"
-                    },
-                    "fixed_height_downsampled_height": {
-                      "type": "string"
-                    },
-                    "fixed_width_downsampled_url": {
-                      "type": "string"
-                    },
-                    "fixed_width_downsampled_width": {
-                      "type": "string"
-                    },
-                    "fixed_width_downsampled_height": {
-                      "type": "string"
-                    },
-                    "fixed_height_small_url": {
-                      "type": "string"
-                    },
-                    "fixed_height_small_still_url": {
-                      "type": "string"
-                    },
-                    "fixed_height_small_width": {
-                      "type": "string"
-                    },
-                    "fixed_height_small_height": {
-                      "type": "string"
-                    },
-                    "fixed_width_small_url": {
-                      "type": "string"
-                    },
-                    "fixed_width_small_still_url": {
-                      "type": "string"
-                    },
-                    "fixed_width_small_width": {
-                      "type": "string"
-                    },
-                    "fixed_width_small_height": {
-                      "type": "string"
-                    },
-                    "username": {
-                      "type": "string"
-                    },
-                    "caption": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/definitions/get_random_response_data"
                 },
                 "meta": {
                   "type": "object",
@@ -500,7 +392,7 @@
     },
     "/gifs/trending": {
       "get": {
-        "operationId": "GET_gifs-trending",
+        "operationId": "get_trending_gif",
         "summary": "Trending GIFs",
         "tags": [
           "Gifs"
@@ -601,15 +493,7 @@
                   }
                 },
                 "pagination": {
-                  "type": "object",
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    },
-                    "offset": {
-                      "type": "integer"
-                    }
-                  }
+                  "$ref": "#/definitions/pagination"
                 }
               }
             }
@@ -624,7 +508,7 @@
     },
     "/stickers/search": {
       "get": {
-        "operationId": "GET_stickers-search",
+        "operationId": "search_stickers",
         "summary": "Search",
         "tags": [
           "Sticker"
@@ -672,18 +556,7 @@
                   }
                 },
                 "pagination": {
-                  "type": "object",
-                  "properties": {
-                    "total_count": {
-                      "type": "integer"
-                    },
-                    "count": {
-                      "type": "integer"
-                    },
-                    "offset": {
-                      "type": "integer"
-                    }
-                  }
+                  "$ref": "#/definitions/pagination"
                 }
               }
             }
@@ -698,7 +571,7 @@
     },
     "/stickers/random": {
       "get": {
-        "operationId": "GET_stickers-random",
+        "operationId": "get_random_stickers",
         "summary": "Random",
         "tags": [
           "Sticker"
@@ -723,84 +596,7 @@
               "type": "object",
               "properties": {
                 "data": {
-                  "type": "object",
-                  "properties": {
-                    "type": {
-                      "type": "string"
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "url": {
-                      "type": "string"
-                    },
-                    "image_original_url": {
-                      "type": "string"
-                    },
-                    "image_url": {
-                      "type": "string"
-                    },
-                    "image_mp4_url": {
-                      "type": "string"
-                    },
-                    "image_frames": {
-                      "type": "string"
-                    },
-                    "image_width": {
-                      "type": "string"
-                    },
-                    "image_height": {
-                      "type": "string"
-                    },
-                    "fixed_height_downsampled_url": {
-                      "type": "string"
-                    },
-                    "fixed_height_downsampled_width": {
-                      "type": "string"
-                    },
-                    "fixed_height_downsampled_height": {
-                      "type": "string"
-                    },
-                    "fixed_width_downsampled_url": {
-                      "type": "string"
-                    },
-                    "fixed_width_downsampled_width": {
-                      "type": "string"
-                    },
-                    "fixed_width_downsampled_height": {
-                      "type": "string"
-                    },
-                    "fixed_height_small_url": {
-                      "type": "string"
-                    },
-                    "fixed_height_small_still_url": {
-                      "type": "string"
-                    },
-                    "fixed_height_small_width": {
-                      "type": "string"
-                    },
-                    "fixed_height_small_height": {
-                      "type": "string"
-                    },
-                    "fixed_width_small_url": {
-                      "type": "string"
-                    },
-                    "fixed_width_small_still_url": {
-                      "type": "string"
-                    },
-                    "fixed_width_small_width": {
-                      "type": "string"
-                    },
-                    "fixed_width_small_height": {
-                      "type": "string"
-                    },
-                    "username": {
-                      "type": "string"
-                    },
-                    "caption": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/definitions/get_random_response_data"
                 },
                 "meta": {
                   "type": "object",
@@ -826,7 +622,7 @@
     },
     "/stickers/trending": {
       "get": {
-        "operationId": "GET_stickers-trending",
+        "operationId": "get_trending_stickers",
         "summary": "Trending",
         "tags": [
           "Sticker"
@@ -874,15 +670,7 @@
                   }
                 },
                 "pagination": {
-                  "type": "object",
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    },
-                    "offset": {
-                      "type": "integer"
-                    }
-                  }
+                  "$ref": "#/definitions/pagination"
                 }
               }
             }
@@ -897,7 +685,7 @@
     },
     "/stickers/translate": {
       "get": {
-        "operationId": "GET_stickers-translate",
+        "operationId": "get_stickers_translate",
         "summary": "Translate",
         "tags": [
           "Sticker"
@@ -916,8 +704,9 @@
           },
           {
             "name": "s",
+            "description": "search term",
             "in": "query",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -976,6 +765,20 @@
     }
   },
   "definitions": {
+    "pagination": {
+      "type": "object",
+      "properties": {
+        "total_count": {
+          "type": "integer"
+        },
+        "count": {
+          "type": "integer"
+        },
+        "offset": {
+          "type": "integer"
+        }
+      }
+    },
     "response_items": {
       "type": "object",
       "properties": {
@@ -1236,6 +1039,86 @@
           "type": "string"
         },
         "": {
+          "type": "string"
+        }
+      }
+    },
+    "get_random_response_data": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "image_original_url": {
+          "type": "string"
+        },
+        "image_url": {
+          "type": "string"
+        },
+        "image_mp4_url": {
+          "type": "string"
+        },
+        "image_frames": {
+          "type": "string"
+        },
+        "image_width": {
+          "type": "string"
+        },
+        "image_height": {
+          "type": "string"
+        },
+        "fixed_height_downsampled_url": {
+          "type": "string"
+        },
+        "fixed_height_downsampled_width": {
+          "type": "string"
+        },
+        "fixed_height_downsampled_height": {
+          "type": "string"
+        },
+        "fixed_width_downsampled_url": {
+          "type": "string"
+        },
+        "fixed_width_downsampled_width": {
+          "type": "string"
+        },
+        "fixed_width_downsampled_height": {
+          "type": "string"
+        },
+        "fixed_height_small_url": {
+          "type": "string"
+        },
+        "fixed_height_small_still_url": {
+          "type": "string"
+        },
+        "fixed_height_small_width": {
+          "type": "string"
+        },
+        "fixed_height_small_height": {
+          "type": "string"
+        },
+        "fixed_width_small_url": {
+          "type": "string"
+        },
+        "fixed_width_small_still_url": {
+          "type": "string"
+        },
+        "fixed_width_small_width": {
+          "type": "string"
+        },
+        "fixed_width_small_height": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "caption": {
           "type": "string"
         }
       }
