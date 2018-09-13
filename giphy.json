@@ -387,7 +387,7 @@
     },
     "/gifs/trending": {
       "get": {
-        "operationId": "get_trending_gif",
+        "operationId": "get_trending_gifs",
         "summary": "Trending GIFs",
         "tags": [
           "Gifs"
