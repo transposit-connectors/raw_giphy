@@ -6,9 +6,7 @@
         "type": "PARAMETER",
         "params": {
           "name": {
-            "key": "api_key",
-            "val": "3bUAEORlsdkEpcMRO6jPdGkUjaZJCtFF",
-            "type": "STRING"
+            "string": "foo"
           }
         }
       },
