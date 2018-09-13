@@ -405,8 +405,9 @@
           {
             "name": "api_key",
             "in": "query",
-            "required": true,
-            "type": "string"
+            "required": false,
+            "type": "string",
+            "default": "dc6zaTOxFJmzC"
           },
           {
             "name": "limit",
