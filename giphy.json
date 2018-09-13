@@ -1,0 +1,1127 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Giphy",
+    "description": "## Welcome\n\nThis is a place to put general notes and extra information, for internal use.\n\nTo get started designing/documenting this API, select a version on the left. # Title\nNo Description"
+  },
+  "host": "api.giphy.com",
+  "basePath": "/v1",
+  "schemes": [
+    "http"
+  ],
+  "securityDefinitions": {
+    "api_key": {
+      "name": "api_key",
+      "type": "apiKey",
+      "in": "query"
+    }
+  },
+  "paths": {
+    "/gifs/search": {
+      "get": {
+        "operationId": "search_gifs",
+        "summary": "Search",
+        "tags": [
+          "Gifs"
+        ],
+        "description": "<p>Search all Giphy GIFs for a word or phrase. Punctuation will be stripped and ignored. Use a plus or url encode for phrases.</p>\n<p>Examples:</p>\n<p><a href=\"http://api.giphy.com/v1/gifs/search?q=paul+rudd&api_key=dc6zaTOxFJmzC\" target=\"_blank\">paul+rudd</a></p>\n<p><a href=\"http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=dc6zaTOxFJmzC\" target=\"_blank\">ryan+gosling</a></p>\n<p><a href=\"http://api.giphy.com/v1/gifs/search?q=american+psycho&api_key=dc6zaTOxFJmzC\" target=\"_blank\">american+psycho</a></p>\n<p><a href=\"http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC&limit=1&offset=0\" target=\"_blank\">funny+cat</a></p>",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "dc6zaTOxFJmzC"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "slug": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      },
+                      "bitly_gif_url": {
+                        "type": "string"
+                      },
+                      "bitly_url": {
+                        "type": "string"
+                      },
+                      "embed_url": {
+                        "type": "string"
+                      },
+                      "username": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "type": "string"
+                      },
+                      "rating": {
+                        "type": "string"
+                      },
+                      "content_url": {
+                        "type": "string"
+                      },
+                      "source_tld": {
+                        "type": "string"
+                      },
+                      "source_post_url": {
+                        "type": "string"
+                      },
+                      "import_datetime": {
+                        "type": "string"
+                      },
+                      "trending_datetime": {
+                        "type": "string"
+                      },
+                      "images": {
+                        "$ref": "#/definitions/images"
+                      },
+                      "user": {
+                        "$ref": "#/definitions/user"
+                      }
+                    }
+                  }
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "pagination": {
+                  "$ref": "#/definitions/pagination"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/gifs/{gif-id}": {
+      "parameters": [
+        {
+          "name": "gif-id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "get": {
+        "operationId": "get_gif",
+        "summary": "Get GIF by ID",
+        "tags": [
+          "Gifs"
+        ],
+        "description": "<p>Returns meta data about a GIF, by GIF id. In the below example, the GIF ID is &quot;feqkVgjJpYtjy&quot;</p>\n<pre><code>http://api.giphy.com/v1/gifs/feqkVgjJpYtjy?api_key=dc6zaTOxFJmzC\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/gifs/feqkVgjJpYtjy?api_key=dc6zaTOxFJmzC\" target=\"_blank\">Example</a></p>",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "dc6zaTOxFJmzC"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/response_items"
+                  }
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "pagination": {
+                  "$ref": "#/definitions/pagination"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/gifs": {
+      "get": {
+        "operationId": "get_gifs",
+        "summary": "Get GIFs by ID",
+        "tags": [
+          "Gifs"
+        ],
+        "description": "<p>A multiget version of the get GIF by ID endpoint. In this case the IDs are feqkVgjJpYtjy and 7rzbxdu0ZEXLy.  Note the additional user metadata attached to the document that describes the second GIF in the response, 7rzbxdu0ZEXLy.</p>\n<pre><code>http://api.giphy.com/v1/gifs?api_key=dc6zaTOxFJmzC&amp;ids=feqkVgjJpYtjy,7rzbxdu0ZEXLy\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/gifs?api_key=dc6zaTOxFJmzC&ids=feqkVgjJpYtjy,7rzbxdu0ZEXLy\" target=\"_blank\">Example</a></p>",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "dc6zaTOxFJmzC"
+          },
+          {
+            "name": "ids",
+            "description": "comma-separated string of ids",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/response_items"
+                  }
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "pagination": {
+                  "$ref": "#/definitions/pagination"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/gifs/translate": {
+      "get": {
+        "operationId": "get_gifs_translate",
+        "summary": "Translate",
+        "tags": [
+          "Gifs"
+        ],
+        "description": "<p>The translate API draws on search, but uses the Giphy &quot;special sauce&quot; to handle translating from one vocabulary to another. In this case, words and phrases to GIFs. Example implementations of translate can be found in the Giphy <a href=\"http://giphy.com/posts/slack-adds-giphy-to-every-chatroom-wut\" target=\"_blank\">Slack</a>, <a href=\"https://marketplace.atlassian.com/plugins/com.giphy.api.hipchat\" target=\"_blank\">Hipchat</a>, <a href=\"https://wire.com/news/giphy-say-it-with-gif\" target=\"_blank\">Wire</a>, or <a href=\"https://dasher.im/\" target=\"_blank\">Dasher</a> integrations. Use a plus or url encode for phrases.</p>\n<pre><code>http://api.giphy.com/v1/gifs/translate?s=superman&amp;api_key=dc6zaTOxFJmzC\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/gifs/translate?s=superman&api_key=dc6zaTOxFJmzC\" target=\"_blank\">Example</a></p>",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "dc6zaTOxFJmzC"
+          },
+          {
+            "name": "s",
+            "description": "Search term",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/definitions/response_items"
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/gifs/random": {
+      "get": {
+        "operationId": "get_random_gif",
+        "summary": "Random",
+        "tags": [
+          "Gifs"
+        ],
+        "description": "<p>Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the Giphy catalog.</p>\n<pre><code>http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&amp;tag=american+psycho\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=american+psycho\" target=\"_blank\">Example</a></p>",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "dc6zaTOxFJmzC"
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/definitions/get_random_response_data"
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/gifs/trending": {
+      "get": {
+        "operationId": "get_trending_gif",
+        "summary": "Trending GIFs",
+        "tags": [
+          "Gifs"
+        ],
+        "description": "<p>Fetch GIFs currently trending online. Hand curated by the Giphy editorial team. The data returned mirrors the GIFs showcased on the <a href=\"\" target=\"_blank\"></a><a target=\"_blank\" href=\"http://giphy.com\" class=\"undefined\">Giphy homepage</a>. Returns 25 results by default.</p>\n<pre><code>http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC\" target=\"_blank\">Example</a> trending GIFs query.\n<a href=\"http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&limit=5\" target=\"_blank\">Example</a> trending GIFs limited to 5 results.</p>",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "dc6zaTOxFJmzC"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "slug": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      },
+                      "bitly_gif_url": {
+                        "type": "string"
+                      },
+                      "bitly_url": {
+                        "type": "string"
+                      },
+                      "embed_url": {
+                        "type": "string"
+                      },
+                      "username": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "type": "string"
+                      },
+                      "rating": {
+                        "type": "string"
+                      },
+                      "content_url": {
+                        "type": "string"
+                      },
+                      "user": {
+                        "$ref": "#/definitions/user"
+                      },
+                      "source_tld": {
+                        "type": "string"
+                      },
+                      "source_post_url": {
+                        "type": "string"
+                      },
+                      "import_datetime": {
+                        "type": "string"
+                      },
+                      "trending_datetime": {
+                        "type": "string"
+                      },
+                      "images": {
+                        "$ref": "#/definitions/images"
+                      }
+                    }
+                  }
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "pagination": {
+                  "$ref": "#/definitions/pagination"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/stickers/search": {
+      "get": {
+        "operationId": "search_stickers",
+        "summary": "Search",
+        "tags": [
+          "Sticker"
+        ],
+        "description": "<p>Replicates the functionality and requirements of the classic Giphy search, but returns animated stickers rather than gifs. Example <a href=\"http://api.giphy.com/v1/stickers/search?q=cat&api_key=dc6zaTOxFJmzC\" target=\"_blank\">Cat</a></p>\n<pre><code>http://api.giphy.com/v1/stickers/search?q=cat&amp;api_key=dc6zaTOxFJmzC</code></pre>",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "dc6zaTOxFJmzC"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/response_items"
+                  }
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "pagination": {
+                  "$ref": "#/definitions/pagination"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/stickers/random": {
+      "get": {
+        "operationId": "get_random_stickers",
+        "summary": "Random",
+        "tags": [
+          "Sticker"
+        ],
+        "description": "<p>Returns a spotaneously selected sticker from Giphy's sticker collection. Optionally limit scope of result to a specific tag. Like the GIF random endpoint, Punctuation will be stripped and ignored. Use a hyphen for phrases. Example <a href=\"http://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC&tag=oops\" target=\"_blank\">oops</a>, <a href=\"http://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC&tag=birthday\" target=\"_blank\">birthday</a> or <a href=\"http://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC&tag=whatever\" target=\"_blank\">thank-you</a>. Search terms should be URL encoded.</p>\n<pre><code>http://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC&amp;tag=oops\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC\" target=\"_blank\">Example</a> random query.</p>",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "dc6zaTOxFJmzC"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/definitions/get_random_response_data"
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/stickers/trending": {
+      "get": {
+        "operationId": "get_trending_stickers",
+        "summary": "Trending",
+        "tags": [
+          "Sticker"
+        ],
+        "description": "<p>Get the latest stickers trending on Giphy with this endpoint. Hand curated by the Giphy editorial team and refreshed daily.</p>\n<pre><code>http://api.giphy.com/v1/stickers/trending?api_key=dc6zaTOxFJmzC\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/stickers/trending?api_key=dc6zaTOxFJmzC&limit=4&fmt=html\" target=\"_blank\">Example</a> trending query with html formatted response.</p>\n<p><a href=\"http://api.giphy.com/v1/stickers/trending?api_key=dc6zaTOxFJmzC&limit=4\" target=\"_blank\">Example</a> trending query with default json response.</p>",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "dc6zaTOxFJmzC"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/response_items"
+                  }
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "pagination": {
+                  "$ref": "#/definitions/pagination"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/stickers/translate": {
+      "get": {
+        "operationId": "get_stickers_translate",
+        "summary": "Translate",
+        "tags": [
+          "Sticker"
+        ],
+        "description": "<p>Using the same alogirithm as the GIF translate endpoint, the sticker translate endpoint turns words into stickers.</p>\n<pre><code>http://api.giphy.com/v1/stickers/translate?s=hungry&amp;api_key=dc6zaTOxFJmzC\n</code></pre>\n<p><a href=\"http://api.giphy.com/v1/stickers/translate?s=hungry&api_key=dc6zaTOxFJmzC\" target=\"_blank\">Example</a> translate query.</p>",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "dc6zaTOxFJmzC"
+          },
+          {
+            "name": "s",
+            "description": "search term",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/definitions/response_items"
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    }
+  },
+  "responses": {
+    "trait:standardErrors:401": {
+      "description": "",
+      "schema": {
+        "type": "object"
+      }
+    },
+    "trait:standardErrors:404": {
+      "description": "",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "foo": {
+            "type": "string"
+          },
+          "bar": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "pagination": {
+      "type": "object",
+      "properties": {
+        "total_count": {
+          "type": "integer"
+        },
+        "count": {
+          "type": "integer"
+        },
+        "offset": {
+          "type": "integer"
+        }
+      }
+    },
+    "response_items": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "bitly_gif_url": {
+          "type": "string"
+        },
+        "bitly_url": {
+          "type": "string"
+        },
+        "embed_url": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "string"
+        },
+        "content_url": {
+          "type": "string"
+        },
+        "source_tld": {
+          "type": "string"
+        },
+        "source_post_url": {
+          "type": "string"
+        },
+        "import_datetime": {
+          "type": "string"
+        },
+        "trending_datetime": {
+          "type": "string"
+        },
+        "images": {
+          "$ref": "#/definitions/images"
+        }
+      }
+    },
+    "images": {
+      "type": "object",
+      "properties": {
+        "fixed_height": {
+          "$ref": "#/definitions/image_properties"
+        },
+        "fixed_height_still": {
+          "$ref": "#/definitions/still_properties"
+        },
+        "fixed_height_downsampled": {
+          "$ref": "#/definitions/downsampled"
+        },
+        "fixed_width": {
+          "$ref": "#/definitions/image_properties"
+        },
+        "fixed_width_still": {
+          "$ref": "#/definitions/still_properties"
+        },
+        "fixed_width_downsampled": {
+          "$ref": "#/definitions/downsampled"
+        },
+        "fixed_height_small": {
+          "$ref": "#/definitions/image_properties"
+        },
+        "fixed_height_small_still": {
+          "$ref": "#/definitions/still_properties"
+        },
+        "fixed_width_small": {
+          "$ref": "#/definitions/image_properties"
+        },
+        "fixed_width_small_still": {
+          "$ref": "#/definitions/still_properties"
+        },
+        "downsized": {
+          "$ref": "#/definitions/downsized"
+        },
+        "downsized_still": {
+          "$ref": "#/definitions/still_properties"
+        },
+        "downsized_large": {
+          "$ref": "#/definitions/downsized"
+        },
+        "downsized_medium": {
+          "$ref": "#/definitions/downsized"
+        },
+        "original": {
+          "$ref": "#/definitions/image_properties"
+        },
+        "original_still": {
+          "$ref": "#/definitions/still_properties"
+        },
+        "looping": {
+          "$ref": "#/definitions/looping"
+        }
+      }
+    },
+    "image_properties": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "type": "string"
+        },
+        "height": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string"
+        },
+        "mp4": {
+          "type": "string"
+        },
+        "mp4_size": {
+          "type": "string"
+        },
+        "webp": {
+          "type": "string"
+        },
+        "webp_size": {
+          "type": "string"
+        }
+      }
+    },
+    "still_properties": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "type": "string"
+        },
+        "height": {
+          "type": "string"
+        }
+      }
+    },
+    "downsampled": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "type": "string"
+        },
+        "height": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string"
+        },
+        "webp": {
+          "type": "string"
+        },
+        "webp_size": {
+          "type": "string"
+        }
+      }
+    },
+    "fixed_width_small": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "type": "string"
+        },
+        "height": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string"
+        },
+        "mp4": {
+          "type": "string"
+        },
+        "mp4_size": {
+          "type": "string"
+        },
+        "webp": {
+          "type": "string"
+        },
+        "webp_size": {
+          "type": "string"
+        }
+      }
+    },
+    "downsized": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "type": "string"
+        },
+        "height": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string"
+        }
+      }
+    },
+    "looping": {
+      "type": "object",
+      "properties": {
+        "mp4": {
+          "type": "string"
+        }
+      }
+    },
+    "user": {
+      "type": "object",
+      "properties": {
+        "avatar_url": {
+          "type": "string"
+        },
+        "banner_url": {
+          "type": "string"
+        },
+        "profile_url": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "twitter": {
+          "type": "string"
+        }
+      }
+    },
+    "shared-user": {
+      "title": "Shared User",
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "": {
+          "type": "string"
+        }
+      }
+    },
+    "get_random_response_data": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "image_original_url": {
+          "type": "string"
+        },
+        "image_url": {
+          "type": "string"
+        },
+        "image_mp4_url": {
+          "type": "string"
+        },
+        "image_frames": {
+          "type": "string"
+        },
+        "image_width": {
+          "type": "string"
+        },
+        "image_height": {
+          "type": "string"
+        },
+        "fixed_height_downsampled_url": {
+          "type": "string"
+        },
+        "fixed_height_downsampled_width": {
+          "type": "string"
+        },
+        "fixed_height_downsampled_height": {
+          "type": "string"
+        },
+        "fixed_width_downsampled_url": {
+          "type": "string"
+        },
+        "fixed_width_downsampled_width": {
+          "type": "string"
+        },
+        "fixed_width_downsampled_height": {
+          "type": "string"
+        },
+        "fixed_height_small_url": {
+          "type": "string"
+        },
+        "fixed_height_small_still_url": {
+          "type": "string"
+        },
+        "fixed_height_small_width": {
+          "type": "string"
+        },
+        "fixed_height_small_height": {
+          "type": "string"
+        },
+        "fixed_width_small_url": {
+          "type": "string"
+        },
+        "fixed_width_small_still_url": {
+          "type": "string"
+        },
+        "fixed_width_small_width": {
+          "type": "string"
+        },
+        "fixed_width_small_height": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "caption": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
