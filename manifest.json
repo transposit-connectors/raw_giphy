@@ -6,7 +6,8 @@
         "type": "HEADER",
         "params": {
           "header": {
-            "string": "api_key"
+            "type": "STRING",
+            "key": "fOO_BAR"
           }
         }
       },
