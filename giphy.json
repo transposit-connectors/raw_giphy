@@ -335,7 +335,7 @@
     },
     "/gifs/random": {
       "get": {
-        "operationId": "get_random_gif"
+        "operationId": "get_random_gif",
         "summary": "Random",
         "tags": [
           "Gifs"
