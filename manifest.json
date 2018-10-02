@@ -2,6 +2,7 @@
   "v2": {
     "swagger": {
       "auth": {
+        "description": "An api key can be generated here https://developers.giphy.com/dashboard/. You can also use Giphy's test api key: dc6zaTOxFJmzC",
         "type": "PARAMETER",
         "params": {
           "name": {
