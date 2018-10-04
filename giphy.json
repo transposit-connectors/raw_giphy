@@ -7,9 +7,7 @@
   },
   "host": "api.giphy.com",
   "basePath": "/v1",
-  "schemes": [
-    "http"
-  ],
+  "schemes": ["http"],
   "securityDefinitions": {
     "api_key": {
       "name": "api_key",
@@ -22,13 +20,9 @@
       "get": {
         "operationId": "search_gifs",
         "summary": "Search",
-        "tags": [
-          "Gifs"
-        ],
+        "tags": ["Gifs"],
         "description": "Search all GIPHY GIFs for a word or phrase. Punctuation will be stripped and ignored. Use a plus or url encode for phrases. Example paul+rudd, ryan+gosling or american+psycho",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "api_key",
@@ -157,13 +151,9 @@
       "get": {
         "operationId": "get_gif",
         "summary": "Get GIF by ID",
-        "tags": [
-          "Gifs"
-        ],
+        "tags": ["Gifs"],
         "description": "Returns a GIF given that GIF's unique ID",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "api_key",
@@ -210,13 +200,9 @@
       "get": {
         "operationId": "get_gifs",
         "summary": "Get GIFs by ID",
-        "tags": [
-          "Gifs"
-        ],
+        "tags": ["Gifs"],
         "description": "A multiget version of the get GIF by ID endpoint.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "api_key",
@@ -273,13 +259,9 @@
       "get": {
         "operationId": "get_gifs_translate",
         "summary": "Translate",
-        "tags": [
-          "Gifs"
-        ],
+        "tags": ["Gifs"],
         "description": "The translate API draws on search, but uses the GIPHY special sauce to handle translating from one vocabulary to another. In this case, words and phrases to GIFs.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "api_key",
@@ -330,13 +312,9 @@
       "get": {
         "operationId": "get_random_gif",
         "summary": "Random",
-        "tags": [
-          "Gifs"
-        ],
+        "tags": ["Gifs"],
         "description": "Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "api_key",
@@ -386,13 +364,9 @@
       "get": {
         "operationId": "get_trending_gifs",
         "summary": "Trending GIFs",
-        "tags": [
-          "Gifs"
-        ],
+        "tags": ["Gifs"],
         "description": "Fetch GIFs currently trending online. Hand curated by the GIPHY editorial team. The data returned mirrors the GIFs showcased on the GIPHY homepage",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "api_key",
@@ -501,13 +475,9 @@
       "get": {
         "operationId": "search_stickers",
         "summary": "Search",
-        "tags": [
-          "Sticker"
-        ],
+        "tags": ["Sticker"],
         "description": "Replicates the functionality and requirements of the classic GIPHY search, but returns animated stickers rather than GIFs.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "api_key",
@@ -563,13 +533,9 @@
       "get": {
         "operationId": "get_random_stickers",
         "summary": "Random",
-        "tags": [
-          "Sticker"
-        ],
+        "tags": ["Sticker"],
         "description": "Returns a random Sticker, limited by tag. Excluding the tag parameter will return a random Sticker from the GIPHY catalog.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "api_key",
@@ -613,13 +579,9 @@
       "get": {
         "operationId": "get_trending_stickers",
         "summary": "Trending",
-        "tags": [
-          "Sticker"
-        ],
+        "tags": ["Sticker"],
         "description": "Fetch Stickers currently trending online. Hand curated by the GIPHY editorial team.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "api_key",
@@ -629,6 +591,12 @@
           },
           {
             "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "offset",
             "in": "query",
             "required": false,
             "type": "integer"
@@ -675,13 +643,9 @@
       "get": {
         "operationId": "get_stickers_translate",
         "summary": "Translate",
-        "tags": [
-          "Sticker"
-        ],
+        "tags": ["Sticker"],
         "description": "The translate API draws on search, but uses the GIPHY special sauce to handle translating from one vocabulary to another. In this case, words and phrases to GIFs.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "api_key",
