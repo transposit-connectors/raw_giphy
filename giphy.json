@@ -3,7 +3,8 @@
   "info": {
     "version": "1.0",
     "title": "Giphy",
-    "description": ""
+    "description": "This file was copied from https://api.stoplight.io/v1/versions/DiS6iMZns4eq4C9RJ/export/oas.json and modified to exlude examples. The operation names were also changed to snake case to conform to Transposit's style guide.",
+    "termsOfService": "https://support.giphy.com/hc/en-us/articles/360020027752-GIPHY-Terms-of-Service"
   },
   "host": "api.giphy.com",
   "basePath": "/v1",
