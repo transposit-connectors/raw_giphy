@@ -16,6 +16,9 @@
       "in": "query"
     }
   },
+  "externalDocs": {
+    "url": "http://developers.giphy.com/docs"
+  },
   "paths": {
     "/gifs/search": {
       "get": {
